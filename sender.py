@@ -2,10 +2,7 @@ from embed import embedFunc
 from AES import encrypt
 import pyperclip as py
 
-
 from sanitizer import sanitize_cover_text
-
-# Integrity hashing 
 from enhancements.integrity import attach_hash
 
 
@@ -15,7 +12,7 @@ def hideFunc(SM, password, CM):
     and embeds it into a sanitized cover text.
     """
 
-    # Sanitize cover text 
+    # Sanitize cover text
     CM, removed = sanitize_cover_text(CM)
 
     # Encrypt message
