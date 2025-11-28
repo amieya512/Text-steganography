@@ -39,11 +39,11 @@ def binaryToDecimal(n):
 
 MS_SK="121" #extracted from 12.15
 SM_binary=""
-ZWC={"00":u'\u200C',"01":u'\u202C',"10":u'\u202D',"11":u'\u200E'}
-ZWC_reverse={u'\u200C':"00",u'\u202C':"01",u'\u202D':"10",u'\u200E':"11"}
 
-def embedFunc(SM,CM):
-  global MS_SK,SM_binary,ZWC,ZWC_reverse
+def embedFunc(SM, CM, ZWC, ZWC_reverse):
+  global MS_SK, SM_binary
+  # Reset global variable for each embedding
+  SM_binary = ""
   for letter in SM:
     n=ord(letter)
     factors=[]

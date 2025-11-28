@@ -23,12 +23,14 @@ def binaryToDecimal(n):
 SM_extract=""
 MR_SK="121"
 hashed_SM_binary_extract=""
-ZWC_reverse={u'\u200C':"00",u'\u202C':"01",u'\u202D':"10",u'\u200E':"11"}
 #CM_HM=input("Enter the cover message:")
 #password=input("Enter password:")
 
-def extractFunc(CM_HM):
-  global SM_extract,MR_SK,hashed_SM_binary_extract,ZWC_reverse
+def extractFunc(CM_HM, ZWC_reverse):
+  global SM_extract, MR_SK, hashed_SM_binary_extract
+  # Reset global variables for each extraction
+  SM_extract = ""
+  hashed_SM_binary_extract = ""
   for letter in CM_HM:
     if(letter in ZWC_reverse):
       hashed_SM_binary_extract+=ZWC_reverse[letter]
